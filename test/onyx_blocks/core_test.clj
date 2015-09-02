@@ -7,8 +7,10 @@
   (testing "Build a file reader"
     (is (c/build-task fr/file-reader 
                       :a-task-name 
-                      {:seq/elements-per-segment 1000} 
-                      {:some-extra-lifecycle {:hey/there "hello"
+                      {:onyx/group-by-fn "hi"
+                       :seq/elements-per-segment 1000} 
+                      {;; lifecycle that was not defined ahead of time
+                       :some-extra-lifecycle {:hey/there "hello"
                                               :lifecycle/calls :hello/there-calls
                                               :lifecycle/doc "hiii"}
                        :file-reader {:buffered-reader/n-lines 500
