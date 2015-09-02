@@ -45,12 +45,3 @@
                                                       (get lifecycle-opts k))))) 
                          []
                          lifecycle-opts)}))
-
-(build-task file-read 
-            :some-reader 
-            {:seq/elements-per-segment 1000} 
-            {:some-extra-lifecycle {:hey/there "hello"
-                                    :lifecycle/calls :hello/there
-                                    :lifecycle/doc "hiii"}
-             :file-reader {:buffered-reader/n-lines 500
-                           :buffered-reader/filename "hithere.txt"}})
